@@ -1,0 +1,5 @@
+[
+    { "caption": "-" },
+    { "command": "reveal_in_side_bar", "caption": "Copy Class Name" },
+    { "caption": "-", "id": "end" }
+]

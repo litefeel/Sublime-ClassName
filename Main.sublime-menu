@@ -1,0 +1,29 @@
+[
+	{
+		"id": "preferences",
+		"children":
+		[
+			{
+				"caption": "Package Settings",
+				"id": "package-settings",
+				"children":
+				[
+					{
+						"caption": "ClassName",
+						"children":
+						[
+							{
+								"caption": "README",
+								"command": "open_file",
+								"args":
+								{
+									"file": "${packages}/ClassName/README.md"
+								}
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

@@ -1,0 +1,5 @@
+[
+	{ "caption": "-" },
+	{ "caption": "Copy Class Name", "command": "classname_copy", "args": {"paths":[]}},
+	{ "caption": "-", "id": "end" }
+]
