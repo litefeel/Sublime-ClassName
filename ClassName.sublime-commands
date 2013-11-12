@@ -1,3 +1,3 @@
 [
-	{ "caption": "TortoiseSVN: Update", "command": "classname_copy" },
+	{ "caption": "Copy Class Name", "command": "classname_copy" }
 ]
