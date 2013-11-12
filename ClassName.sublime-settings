@@ -1,3 +1,6 @@
 {
-	"tortoiseproc_path": "C:\\Program Files\\TortoiseSVN\\bin\\TortoiseProc.exe"
+    // set this string as prefix of class name
+    "classname_prefix": "",
+    // set this string as suffix of class name
+	"classname_suffix": ""
 }

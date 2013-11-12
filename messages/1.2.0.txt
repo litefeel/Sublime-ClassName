@@ -1,0 +1,7 @@
+Sublime-ClassName
+=============
+
+
+CHANGES
+------------
+*   Added: Prefix and suffix of classname at settings.

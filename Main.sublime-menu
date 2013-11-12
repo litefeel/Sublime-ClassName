@@ -33,6 +33,21 @@
 							},
 							{"caption": "-"},
 							{
+								"caption": "Settings – Default",
+								"command": "open_file",
+								"args": {
+									"file": "${packages}/ClassName/ClassName.sublime-settings"
+								}
+							},
+							{
+								"caption": "Settings – User",
+								"command": "open_file",
+								"args": {
+									"file": "${packages}/User/ClassName.sublime-settings"
+								}
+							},
+							{"caption": "-"},
+							{
 								"caption": "Key Bindings – Default",
 								"command": "open_file",
 								"args": {

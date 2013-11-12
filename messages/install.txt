@@ -13,6 +13,21 @@ The default key bindings are
 
 You can also call ClassName commands when right-clicking files in the side bar.
 
+Settings
+==============
+
+If you need you will be able to add the prefix and suffix of classname.  
+please modify the path by selecting 
+"Preferences->Package Settings->ClassName->Settings - User" in the menu.
+
+The default setting is:
+
+    {
+        // set this string as prefix of class name
+         "classname_prefix": "",
+         // set this string as suffix of class name
+         "classname_suffix": ""
+    }
 
 IMPORTANT
 ==============
