@@ -14,7 +14,7 @@ class ClassnameCopyCommand(sublime_plugin.WindowCommand):
 			fullname = self.getClassName(file)
 			if fullname:
 				sublime.set_clipboard(str(fullname))
-				sublime.status_message("Copied class full name")
+				sublime.status_message("Copied class full name: " + fullname)
 			else:
 				sublime.status_message("Can not find class name")
 

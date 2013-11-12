@@ -1,0 +1,10 @@
+Sublime-ClassName
+=============
+
+
+CHANGES
+------------
+*   Added: Menu item of 'Copy Class Name' at Edit memnu.
+*   Added: Menu item of 'Key Bindings' at `Preferences->Package Settings->ClassName` menu.
+*   Added: Class full name show at status bar.
+*   Fixed: 'Copy Class Name' menu do not work at cotext menu.
