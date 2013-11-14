@@ -1,3 +1,4 @@
 [
-	{ "caption": "Copy Class Name", "command": "classname_copy" }
+	{ "caption": "Copy Class Name", "command": "classname_copy" },
+	{ "caption": "Copy Package Path", "command": "classname_copy_package" }
 ]
