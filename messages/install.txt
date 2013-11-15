@@ -1,7 +1,7 @@
 Sublime-ClassName
 =============
 sublime-ClassName is a tiny and simple plugin for [Sublime Text](http://www.sublimetext.com) .
-It copy class full name to clipboard.
+It copy class full name and package path to clipboard.
 
 Usage
 ============
