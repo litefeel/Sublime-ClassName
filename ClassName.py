@@ -8,7 +8,8 @@ class ClassNameCommand(sublime_plugin.WindowCommand):
 		if paths:
 			file = '*'.join(paths)
 		else:
-			file = sublime.active_window().active_view().file_name()
+			view = sublime.active_window().active_view()
+			file = view.file_name() if view else None
 		return file
 
 
