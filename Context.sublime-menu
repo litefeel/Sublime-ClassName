@@ -1,4 +1,5 @@
 [
-    { "caption": "Copy Class Name", "command": "classname_copy", "args": {"paths":[]}},
-    { "caption": "-", "id": "end" }
+	{ "caption": "Copy Class Name", "command": "classname_copy", "args": {"paths":[]}},
+	{ "caption": "Copy Package Path", "command": "classname_copy_package", "args": {"paths":[]}},
+	{ "caption": "-", "id": "end" }
 ]

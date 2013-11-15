@@ -3,28 +3,35 @@ import sublime_plugin
 import os
 import os.path
 
-class ClassnameCopyCommand(sublime_plugin.WindowCommand):
-	def run(self, paths=None):
+class ClassNameCommand(sublime_plugin.WindowCommand):
+	def getFilePath(self, paths=None):
 		if paths:
 			file = '*'.join(paths)
 		else:
 			file = sublime.active_window().active_view().file_name()
-		
-		if file and len(file) > 0:
-			fullname = self.getClassName(file)
-			if fullname:
-				settings = sublime.load_settings('ClassName.sublime-settings')
-				prefix = settings.get('classname_prefix')
-				suffix = settings.get('classname_suffix')
-				prefix = prefix if prefix else ''
-				suffix = suffix if suffix else ''
-				fullname = prefix + fullname + suffix
-				sublime.set_clipboard(fullname)
-				sublime.status_message("Copied class full name: " + fullname)
-			else:
-				sublime.status_message("Can not find class name")
+		return file
+
+
+class ClassnameCopyCommand(ClassNameCommand):
+	def run(self, paths=None):
+		file = self.getFilePath(paths)
+		fullname = self.getClassName(file) if file else None
+		if fullname:
+			settings = sublime.load_settings('ClassName.sublime-settings')
+			prefix = settings.get('classname_prefix')
+			suffix = settings.get('classname_suffix')
+			prefix = prefix if prefix else ''
+			suffix = suffix if suffix else ''
+			fullname = prefix + fullname + suffix
+			sublime.set_clipboard(fullname)
+			sublime.status_message("Copied class full name: " + fullname)
+		else:
+			sublime.status_message("Can not find class name")
 
 	def getClassName(self, file):
+		if not file:
+			return None
+
 		folders = sublime.active_window().folders()
 		(path, ext) = os.path.splitext(file)
 		extLen = len(ext)
@@ -41,29 +48,21 @@ class ClassnameCopyCommand(sublime_plugin.WindowCommand):
 
 
 	def is_visible(self, paths=None):
-		if paths:
-			file = '*'.join(paths)
-		else:
-			file = sublime.active_window().active_view().file_name()
-		return os.path.isfile(file)
+		file = self.getFilePath(paths)
+		return os.path.isfile(file) if file else False
 
-class ClassnameCopyPackageCommand(sublime_plugin.WindowCommand):
+class ClassnameCopyPackageCommand(ClassNameCommand):
 	def run(self, paths=None):
-		if paths:
-			file = '*'.join(paths)
+		file = self.getFilePath(paths)
+		package = self.getPackage(file) if file else None
+		if package:
+			sublime.set_clipboard(package)
+			sublime.status_message("Copied class package path: " + package)
 		else:
-			file = sublime.active_window().active_view().file_name()
-		
-		if file and len(file) > 0:
-			dir = file if os.path.isdir(file) else os.path.dirname(file)
-			package = self.getPackage(dir)
-			if package:
-				sublime.set_clipboard(package)
-				sublime.status_message("Copied class package path: " + package)
-			else:
-				sublime.status_message("Can not find package")
+			sublime.status_message("Can not find package")
 
 	def getPackage(self, file):
+		file = file if os.path.isdir(file) else os.path.dirname(file)
 		folders = sublime.active_window().folders()
 		for dir in folders:
 			if 0 == file.find(dir):
@@ -72,12 +71,3 @@ class ClassnameCopyPackageCommand(sublime_plugin.WindowCommand):
 				return package
 		
 		return None
-
-
-	def is_visible(self, paths=None):
-		if paths:
-			dir = '*'.join(paths)
-			return os.path.isdir(dir)
-
-		return False
-
