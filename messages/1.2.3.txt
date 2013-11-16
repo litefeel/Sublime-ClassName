@@ -1,0 +1,7 @@
+Sublime-ClassName
+=============
+
+
+CHANGES
+------------
+*   Fixed: No document editing does not work.
