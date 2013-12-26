@@ -8,7 +8,7 @@ Usage
 Install it using [Sublime Package Control](http://wbond.net/sublime_packages/package_control).
 
 
-The default key bindings are 
+The default key bindings are
 - [ctrl+alt+c] : copy class full name of current file to clipboard.
 
 You can also call ClassName commands when right-clicking files in the side bar.
@@ -16,17 +16,19 @@ You can also call ClassName commands when right-clicking files in the side bar.
 Settings
 ==============
 
-If you need you will be able to add the prefix and suffix of classname.  
-please modify the path by selecting 
+If you need you will be able to add the prefix and suffix of classname.
+please modify the path by selecting
 "Preferences->Package Settings->ClassName->Settings - User" in the menu.
 
 The default setting is:
 
     {
         // set this string as prefix of class name
-         "classname_prefix": "",
-         // set this string as suffix of class name
-         "classname_suffix": ""
+        "classname_prefix": "",
+        // set this string as namespace separator
+        "namespace_separator": ".",
+        // set this string as suffix of class name
+        "classname_suffix": ""
     }
 
 IMPORTANT
