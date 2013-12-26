@@ -41,9 +41,9 @@ class ClassnameCopyCommand(ClassNameCommand):
 				fullname = file[len(dir)+1:]
 				if extLen > 0:
 					fullname = fullname[0:-extLen]
-				fullname = fullname.replace(os.sep, '.')
+				fullname = fullname.replace(os.sep, sublime.load_settings('ClassName.sublime-settings').get('namespace_separator'))
 				return fullname
-		
+
 		return None
 
 
@@ -68,7 +68,7 @@ class ClassnameCopyPackageCommand(ClassNameCommand):
 		for dir in folders:
 			if 0 == file.find(dir):
 				package = file[len(dir)+1:]
-				package = package.replace(os.sep, '.')
+				package = package.replace(os.sep, sublime.load_settings('ClassName.sublime-settings').get('namespace_separator'))
 				return package
-		
+
 		return None
