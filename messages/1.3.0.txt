@@ -1,0 +1,5 @@
+Sublime-ClassName 1.3.1 changelog
+=============================
+
+- Added: config:**namespace_separator**  
+    set this string as namespace separator, default:'.' 

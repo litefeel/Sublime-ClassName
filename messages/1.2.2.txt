@@ -1,8 +1,5 @@
-Sublime-ClassName
-=============
+Sublime-ClassName 1.2.2 changelog
+=============================
 
-
-CHANGES
-------------
 *   Added: Copy package path.
 *   Fixed: Delimiter of class name is not dot at Linux and Mac.

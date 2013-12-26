@@ -1,7 +1,4 @@
-Sublime-ClassName
-=============
+Sublime-ClassName 1.2.0 changelog
+=============================
 
-
-CHANGES
-------------
 *   Added: Prefix and suffix of classname at settings.

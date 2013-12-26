@@ -1,7 +1,4 @@
-Sublime-ClassName
-=============
+Sublime-ClassName 1.2.3 changelog
+=============================
 
-
-CHANGES
-------------
 *   Fixed: No document editing does not work.
