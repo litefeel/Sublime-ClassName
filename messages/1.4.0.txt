@@ -1,0 +1,4 @@
+Sublime-ClassName 1.3.1 changelog
+=============================
+
+- Use edit setting panel for st3
