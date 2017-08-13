@@ -45,7 +45,9 @@ class TestClassName(TestCase):
         with open(filename, 'w') as f:
             f.write('this is test file')
 
-        sublime.active_window().run_command("open_dir", { 'dir': basedir })
+        # add an folders to sublime text
+        d = {"folders":[{"path":basedir}]}
+        sublime.active_window().set_project_data(d)
 
         self.view = sublime.active_window().open_file(filename)
         self.view.window().focus_view(self.view)
@@ -62,14 +64,12 @@ class TestClassName(TestCase):
         self.assertTrue(self.obj.empty(), self.obj.buff)
 
     def test_copy_package(self):
-        yield 1000
         sublime.set_clipboard("this is clipboard text");
-        self.view.run_command("classname_copy_package")
+        self.view.window().run_command("classname_copy_package")
         self.assertEqual(self.packagename, sublime.get_clipboard())
 
     def test_copy_classname(self):
-        yield 1000
         sublime.set_clipboard("this is clipboard text");
-        self.view.run_command("classname_copy")
+        self.view.window().run_command("classname_copy")
         self.assertEqual(self.classname, sublime.get_clipboard())
 
